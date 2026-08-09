@@ -1,0 +1,13 @@
+{
+  "name": "devops-cicd-app",
+  "version": "1.0.0",
+  "description": "Application Web DevOps CI/CD",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

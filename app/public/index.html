@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DevOps CI/CD</title>
+
+</head>
+
+<body>
+
+    <h1>🚀 Application DevOps CI/CD</h1>
+
+    <p>
+        Première version de mon application.
+    </p>
+
+    <button onclick="checkHealth()">
+        Vérifier le serveur
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+
+        async function checkHealth() {
+
+            const response =
+                await fetch("/api/health");
+
+            const data =
+                await response.json();
+
+            document.getElementById("result")
+                .innerText = data.message;
+        }
+
+    </script>
+
+</body>
+
+</html>
