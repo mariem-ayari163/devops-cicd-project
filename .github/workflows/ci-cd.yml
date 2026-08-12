@@ -57,3 +57,18 @@ jobs:
         run: |
           docker push \
             ${{ secrets.DOCKERHUB_USERNAME }}/devops-cicd-app:latest
+              runner-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Test Ubuntu Runner
+        run: |
+          echo "===== SELF-HOSTED RUNNER ====="
+          echo "Hostname:"
+          hostname
+          echo "User:"
+          whoami
+          echo "Docker:"
+          docker --version
+          echo "Docker Compose:"
+          docker compose version
