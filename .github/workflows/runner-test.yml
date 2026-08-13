@@ -1,0 +1,31 @@
+name: Runner Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  runner-test:
+
+    runs-on: self-hosted
+
+    steps:
+
+      - name: Test runner
+        run: |
+          echo "================================"
+          echo "Self-hosted Runner fonctionne !"
+          echo "================================"
+
+      - name: Vérifier utilisateur
+        run: whoami
+
+      - name: Vérifier système
+        run: |
+          hostname
+          uname -a
+
+      - name: Vérifier Docker
+        run: docker --version
+
+      - name: Vérifier Docker Compose
+        run: docker compose version
