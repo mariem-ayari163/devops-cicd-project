@@ -32,6 +32,7 @@ jobs:
         working-directory: app
         run: npm test
 
+
   docker:
     needs: test
     runs-on: ubuntu-latest
@@ -57,10 +58,13 @@ jobs:
         run: |
           docker push \
             ${{ secrets.DOCKERHUB_USERNAME }}/devops-cicd-app:latest
-              runner-test:
+
+
+  runner-test:
     runs-on: self-hosted
 
     steps:
+
       - name: Test Ubuntu Runner
         run: |
           echo "===== SELF-HOSTED RUNNER ====="
