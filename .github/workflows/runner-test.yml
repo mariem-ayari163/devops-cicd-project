@@ -5,27 +5,21 @@ on:
 
 jobs:
   runner-test:
-
     runs-on: self-hosted
 
     steps:
-
-      - name: Test runner
+      - name: Test Ubuntu Runner
         run: |
           echo "================================"
-          echo "Self-hosted Runner fonctionne !"
+          echo "GitHub Actions fonctionne !"
           echo "================================"
-
-      - name: Vérifier utilisateur
-        run: whoami
-
-      - name: Vérifier système
-        run: |
+          echo "Machine :"
           hostname
+          echo "Utilisateur :"
+          whoami
+          echo "OS :"
           uname -a
-
-      - name: Vérifier Docker
-        run: docker --version
-
-      - name: Vérifier Docker Compose
-        run: docker compose version
+          echo "Docker :"
+          docker --version
+          echo "Date :"
+          date
