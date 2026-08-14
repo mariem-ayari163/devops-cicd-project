@@ -76,3 +76,19 @@ jobs:
           docker --version
           echo "Docker Compose:"
           docker compose version
+    -name: Test Self Hosted Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+
+    steps:
+      - name: Test Ubuntu
+        run: |
+          echo "Runner fonctionne !"
+          hostname
+          whoami
+          docker --version
