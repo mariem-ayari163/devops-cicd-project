@@ -4,22 +4,20 @@ on:
   workflow_dispatch:
 
 jobs:
-  runner-test:
+
+  test-runner:
     runs-on: self-hosted
 
     steps:
-      - name: Test Ubuntu Runner
+
+      - name: Test Self Hosted Runner
         run: |
-          echo "================================"
-          echo "GitHub Actions fonctionne !"
-          echo "================================"
-          echo "Machine :"
+          echo "===== RUNNER FONCTIONNE ====="
+          echo "Hostname:"
           hostname
-          echo "Utilisateur :"
+          echo "User:"
           whoami
-          echo "OS :"
-          uname -a
-          echo "Docker :"
+          echo "Docker:"
           docker --version
-          echo "Date :"
-          date
+          echo "Docker Compose:"
+          docker compose version
