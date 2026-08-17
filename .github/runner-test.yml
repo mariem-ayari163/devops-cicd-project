@@ -1,29 +1,16 @@
-name: Runner Test
-
-on:
-  workflow_dispatch:
-
-jobs:
-
   runner-test:
-
     runs-on: self-hosted
 
     steps:
 
-      - name: Test Runner
+      - name: Test Ubuntu Runner
         run: |
-          echo "================================"
-          echo "Self-hosted Runner fonctionne !"
-          echo "================================"
-
-      - name: Show system
-        run: |
+          echo "===== SELF-HOSTED RUNNER ====="
+          echo "Hostname:"
           hostname
+          echo "User:"
           whoami
-          pwd
-
-      - name: Test Docker
-        run: |
+          echo "Docker:"
           docker --version
+          echo "Docker Compose:"
           docker compose version
